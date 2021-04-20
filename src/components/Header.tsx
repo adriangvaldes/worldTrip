@@ -8,13 +8,13 @@ export function Header() {
   const router = useRouter()
 
   return (
-    <Flex maxWidth={1440} alignItems="center" mx="auto">
+    <Flex maxWidth={1920} alignItems="center" mx="auto" justifyContent="center">
       { router.pathname !== '/' &&
         <Link position="absolute" href="/" my={27} ml="36">
           <Icon  as={AiOutlineLeft} fontSize="32"  />
         </Link> 
       }
-        <Image src="../assets/Logo.png" alt="logo" my={27} mx="auto"></Image>
+        <Image src="../assets/Logo.png" alt="logo" my={27} ml="5"></Image>
     </Flex>
   );
 }

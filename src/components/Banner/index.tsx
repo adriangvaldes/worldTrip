@@ -8,13 +8,13 @@ SwiperCore.use([Navigation, Pagination]);
 
 export function Banner() {
   return (
-    <Flex height={450}  w={1240} position="relative" mx="auto" mb="10" mt="14" alignItems="center" justifyContent="center">
+    <Flex height={450}  position="relative" maxWidth={1240} mx="auto" mb="10" mt="14" alignItems="center" justifyContent="center">
         <Swiper
           navigation
           pagination={{ clickable: true }}
           spaceBetween={50}
           slidesPerView={1}
-          onSlideChange={() => console.log('slide change')}
+          onSlideChange={() => {}}
         >
           <SwiperSlide>
             <BannerItem title="America do Sul" description="Paisagens Exóticas" url="riodejaneiro" />

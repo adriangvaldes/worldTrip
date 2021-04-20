@@ -1,17 +1,20 @@
-import { Box, Flex, Icon, Image, Text } from '@chakra-ui/react';
+import { Box, Flex, Icon, Image, Text, useBreakpointValue } from '@chakra-ui/react';
 
 import { Banner } from '../components/Banner';
 import { Section } from '../components/Section';
 
 export default function Home() {
+  const isWideVersion = useBreakpointValue({
+    base: false,
+    lg: true,
+  })
+
   return (
     <>
       <Flex 
         height={370} 
-        maxWidth={1440} 
-        position="relative" 
-        justifyContent="center" 
-        mx="auto"
+        maxWidth={1920} 
+        justifyContent="center"
       >
         <Box 
           height={335} 
@@ -21,36 +24,37 @@ export default function Home() {
         >  
           <Image src="../assets/background.jpg" alt="background" position="absolute" margin="auto" />
         </Box>
-        <Flex 
-          position="absolute" 
-          width="100%"  
-          justifyContent="space-between"
-        >
-          <Box ml="100">
-            <Text 
-              fontSize="4xl" 
-              color="white"
-              mt="20"
-              maxWidth={426}
-            >
-              5 continentes,<br/>infintas possibilidades.
-            </Text>
-            <Text 
-              fontSize="lg" 
-              color="white"
-              mt="5"
-              maxWidth={524}
-            >
-              Chegou a hora de tirar do papel a viagem que você sempre sonhou
-            </Text>
-          </Box>
-          <Image src="../assets/Airplane.svg" alt="airplane" mr="100" mt="20"/>
-        </Flex>
+        <Box position="absolute">
+          <Flex
+            w={{base: 375, md: 720, lg: 1440 }}  
+            justifyContent="space-between"
+          >
+            <Box ml={{base: "0", lg: "36"}} >
+              <Text 
+                fontSize="4xl"
+                color="white"
+                mt="20"
+                maxWidth={426}
+              >
+                5 continentes,<br/>infintas possibilidades.
+              </Text>
+              <Text 
+                fontSize="lg" 
+                color="white"
+                mt="5"
+                maxWidth={524}
+              >
+                Chegou a hora de tirar do papel a viagem que você sempre sonhou
+              </Text>
+            </Box>
+            { isWideVersion && <Image src="../assets/Airplane.svg" alt="airplane" mt="20" mr="36"/>}
+          </Flex>
+        </Box>
       </Flex>
 
-      <Section />
+      <Section showIcon={isWideVersion}/>
 
-      <Box width={840} mx="auto" mt="32">
+      <Box maxWidth={840} mx="auto" mt="32">
         <Text 
           fontSize="4xl" 
           fontWeight="medium" 
