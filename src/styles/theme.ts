@@ -8,6 +8,9 @@ export const theme = extendTheme({
     gray: {
       "100" : "#999999",
       "400" : "#47585B",
+    },
+    yello: {
+      "500" : "#FFBA08",
     }
   },
   fonts: {

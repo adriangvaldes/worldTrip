@@ -8,7 +8,7 @@ SwiperCore.use([Navigation, Pagination]);
 
 export function Banner() {
   return (
-    <Flex height={450}  position="relative" maxWidth={1240} mx="auto" mb="10" mt="14" alignItems="center" justifyContent="center">
+    <Flex height={{ base: 250, md: 450}}  position="relative" maxWidth={1240} mx="auto" mb="10" mt="14" alignItems="center" justifyContent="center">
         <Swiper
           navigation
           pagination={{ clickable: true }}

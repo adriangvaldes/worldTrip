@@ -1,4 +1,4 @@
-import { Flex, Image, Text } from "@chakra-ui/react";
+import { Flex, Image, Text, Box } from "@chakra-ui/react";
 
 interface BannerItemProps {
   title: string,
@@ -9,7 +9,7 @@ interface BannerItemProps {
 export function BannerItem({title, description, url} :BannerItemProps){
   return (
     <Flex 
-      height={450} 
+      height={{ base: 250, md: 450}} 
       maxWidth={1240} 
       overflow="hidden" 
       position="relative" 
@@ -22,13 +22,13 @@ export function BannerItem({title, description, url} :BannerItemProps){
           fontSize={["4xl", "5xl"]} 
           fontWeight="semibold" 
           mx="auto" 
-          mb="5"
+          mb={{ base: "1", md: "5"}}
         >
           {title}
         </Text>
         <Text 
           color="white" 
-          fontSize={["xl", "2xl"]} 
+          fontSize={["md", "2xl"]} 
           fontWeight="semibold" 
           mx="auto"
         >
