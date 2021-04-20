@@ -2,6 +2,7 @@ import { Box, Flex, Icon, Image, Text, useBreakpointValue } from '@chakra-ui/rea
 
 import { Banner } from '../components/Banner';
 import { Section } from '../components/Section';
+import { AiOutlineLine } from 'react-icons/ai'
 
 export default function Home() {
   const isWideVersion = useBreakpointValue({
@@ -17,7 +18,7 @@ export default function Home() {
         justifyContent="center"
       >
         <Box 
-          height={{base: 200, md: 335}} 
+          height="100%" 
           w="100%" 
           overflow="hidden" 
           position="relative" 
@@ -55,7 +56,11 @@ export default function Home() {
 
       <Section showIcon={isWideVersion}/>
 
-      <Box maxWidth={840} mx="auto" mt="32">
+      <Flex display="block" >
+        <Image src="./assets/icons/divider.svg" fontSize="8xl" mx="auto"  mt="28"/>
+      </Flex>
+
+      <Box maxWidth={840} mx="auto" mt="14">
         <Text 
           fontSize={{ base: "xl", md: "4xl"}} 
           fontWeight={{ base: "medium" ,md: "medium" }}
