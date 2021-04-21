@@ -1,6 +1,7 @@
 import { Box, Flex, Icon, Image, Text,  HStack, Avatar} from '@chakra-ui/react';
 
 import { GoInfo } from 'react-icons/go'
+import { Card } from '../components/Card';
 
 export default function Continent() {
   return (
@@ -8,6 +9,8 @@ export default function Continent() {
       <Flex 
         height={{base: 300, md: 500}}  
         maxWidth={1920} 
+        alignItems="flex-end"
+        justifyContent="center"
       >
         <Box 
           height="100%" 
@@ -25,18 +28,20 @@ export default function Continent() {
           />
         </Box>
 
-        <Text 
-          position="absolute" 
-          color="white"
-          fontSize="6xl" 
-          fontWeight="semibold"
-          ml="36"
-        >
-          Europa
-        </Text>
+        <Box position="absolute" width={1160} mx="auto">
+          <Text
+            color="white"
+            fontSize="6xl" 
+            fontWeight="semibold"
+            mb="14"
+          >
+            Europa
+          </Text>
+        </Box>
+        
       </Flex>
 
-      <Flex mt="36" mx="auto" justifyContent="space-between" maxWidth={1440} px="28" alignItems="center">
+      <Flex mt="36" mx="auto" justifyContent="space-between" maxWidth={1160}  alignItems="center">
         <Text textAlign="justify" maxWidth={600} fontSize="xl">
         A Europa é, por convenção, um dos seis continentes do mundo. Compreendendo a península ocidental da Eurásia,
          a Europa geralmente divide-se da Ásia a leste pela divisória de águas dos montes Urais, o rio Ural, o mar Cáspio, o 
@@ -106,50 +111,22 @@ export default function Continent() {
           fontSize="4xl"
           fontWeight="bold"
           mb="10"
+          ml="5"
         >
           Cidades +100
         </Text> 
-        <HStack spacing="14">
-          <Box border="1px solid #FFBA08" borderRadius={4}>
-            <Image src="./assets/cities/london.png"/>
-            <Flex mb="6" mt="5" alignItems="center" justifyContent="space-between" px="6">
-              <Box>
-                <Text
-                  fontWeight="bold"
-                  mb="3"
-                >
-                  Londres
-                </Text>
-                <Text
-                  fontSize="sm"
-                  color="gray.100"
-                >
-                  Reino Unido
-                </Text>
-              </Box>
-              <Avatar size="sm"/>
-            </Flex>
-          </Box>
-          <Box border="1px solid #FFBA08" borderRadius={4}>
-            <Image src="./assets/cities/london.png"/>
-            <Flex mb="6" mt="5" alignItems="center" justifyContent="space-between" px="6">
-              <Box>
-                <Text
-                  fontWeight="bold"
-                  mb="3"
-                >
-                  Londres
-                </Text>
-                <Text
-                  fontSize="sm"
-                  color="gray.100"
-                >
-                  Reino Unido
-                </Text>
-              </Box>
-              <Avatar size="sm"/>
-            </Flex>
-          </Box>
+        <HStack  spacing="0" flexWrap="wrap" mx="auto">
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
         </HStack>
       </Box>
     </>
